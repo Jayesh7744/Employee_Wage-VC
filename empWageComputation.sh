@@ -25,3 +25,21 @@ if(( $isPresent - $randomCheck ))
 else
         salery=0
 fi
+
+
+isPartTime=1;
+isFullTime=2;
+saleryPerHr=20;
+randomCheck=$(( RANDOM%3 ))
+
+  if(( $isFullTime - $randomCheck ))
+ then
+      workHrs=8;
+
+   elif(( $isPartTime - $randomCheck ))
+   then
+        workHrs=4;
+    else
+        absent=0;
+   fi
+      salery=$(( $saleryPerHr * $workHrs ))
