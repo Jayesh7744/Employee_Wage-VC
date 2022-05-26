@@ -63,3 +63,22 @@ case $empCheck in
            ;;
 esac
       salery=$(( $saleryPerHr * $workHrs ))
+
+
+isPartTime=1;
+isFullTime=2;
+saleryPerHr=20;
+randomCheck=$(( RANDOM%3 ))
+
+  if(( $isFullTime - $randomCheck ))
+ then
+      workHrs=8;
+      totalDays=20;
+   elif(( $isPartTime - $randomCheck ))
+   then
+        workHrs=4;
+        totalDays=20;
+    else
+        absent=0;
+   fi
+      salery=$(( ($saleryPerHr * $workHrs) * 20 ))
