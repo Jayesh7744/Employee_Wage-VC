@@ -43,3 +43,23 @@ randomCheck=$(( RANDOM%3 ))
         absent=0;
    fi
       salery=$(( $saleryPerHr * $workHrs ))
+
+
+isPartTime=1;
+isFullTime=2;
+saleryPerHr=20;
+empCheck=$(( RANDOM%3 ))
+
+case $empCheck in
+      $isFullTime)
+      workHrs=8
+          ;;
+
+    $isPartTime)
+        workHrs=4
+           ;;
+     *)
+        workHrs=0
+           ;;
+esac
+      salery=$(( $saleryPerHr * $workHrs ))
